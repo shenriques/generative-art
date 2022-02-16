@@ -24,18 +24,19 @@ class Walker {
 
   step() {
 
-    var x_axis = Math.floor((Math.random() * 3) - 1);
+    // represents 3 x 3 grid 
+    var x_axis = Math.floor((Math.random() * 3) - 1); // random choice of [-1, 0, 1]
     var y_axis = Math.floor((Math.random() * 3) - 1);
 
-    if (x_axis == 1){
+    if (x_axis == 1){ // move right 
       this.x++
-    } else if (x_axis == -1){
+    } else if (x_axis == -1){ // move left
       this.x--
     }
 
-    if (y_axis == 1){
+    if (y_axis == 1){ // move up 
       this.y++
-    } else if (y_axis == -1){
+    } else if (y_axis == -1){ // move down
       this.y--
     }
     

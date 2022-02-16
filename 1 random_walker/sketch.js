@@ -23,18 +23,24 @@ class Walker {
   }
 
   step() {
-    var choice = floor(random(4));
-    if (choice === 0) {
-      this.x++;
-    } else if (choice == 1) {
-      this.x--;
-    } else if (choice == 2) {
-      this.y++;
-    } else {
-      this.y--;
+
+    var x_axis = Math.floor((Math.random() * 3) - 1);
+    var y_axis = Math.floor((Math.random() * 3) - 1);
+
+    if (x_axis == 1){
+      this.x++
+    } else if (x_axis == -1){
+      this.x--
     }
-    // keep value of var between param 2 and 3
-    this.x = constrain(this.x, 0, width - 1);
+
+    if (y_axis == 1){
+      this.y++
+    } else if (y_axis == -1){
+      this.y--
+    }
+    
+    // dont draw off the page
+    this.x = constrain(this.x, 0, width - 1); // keep value of var between param 2 and 3
     this.y = constrain(this.y, 0, height - 1);
   }
 }

@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(1200, 450);
+  createCanvas(1200, 700);
   background(255, 204, 0);
 }
 
@@ -14,4 +14,13 @@ function draw() {
   fill(0, 5);
   noStroke();
   ellipse(xloc, height / 2, 16, 16); // Draw an ellipse at our "normal" random position
+
+  // paint drip (should be splatter tho..)
+  let yloc = randomGaussian();
+  yloc = yloc * standardDeviation + mean;
+  fill('#A1045A');
+  noStroke();
+  ellipse(xloc, yloc, 16, 16); 
+
+  // gaussian random walk 
 }
